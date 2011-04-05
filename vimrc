@@ -96,7 +96,6 @@
     nmap <leader>f7 :set foldlevel=7<CR>
     nmap <leader>f8 :set foldlevel=8<CR>
     nmap <leader>f9 :set foldlevel=9<CR>
-
 	cmap w!! w !sudo tee % >/dev/null
 "}
 
