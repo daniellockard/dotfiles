@@ -46,7 +46,7 @@
 		set statusline+=%w%h%m%r
 		set statusline+=\ [%{&ff}/%Y]
 		set statusline+=\ [%{getcwd()}]
-	    set statusline+=%=%-14.(%l,%c%V%)\ %p%%
+		set statusline+=%=%-14.(%l,%c%V%)\ %p%%
 	endif
 
 	set backspace=indent,eol,start
@@ -79,7 +79,7 @@
 
 " Remappings {
 
-		cmap W w                       
+	cmap W w                       
     cmap WQ wq
     cmap wQ wq
     cmap Q q
@@ -97,7 +97,7 @@
     nmap <leader>f8 :set foldlevel=8<CR>
     nmap <leader>f9 :set foldlevel=9<CR>
 
-		cmap w!! w !sudo tee % >/dev/null
+	cmap w!! w !sudo tee % >/dev/null
 "}
 
 function! InitializeDirectories()
