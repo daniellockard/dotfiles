@@ -105,9 +105,6 @@ call EnsureDirExists($HOME . '/tmp/swap')
 call EnsureDirExists($HOME . '/tmp/undo')
 call EnsureDirExists($HOME . '/tmp/backup')
 
-let g:reveal_root_path = '$HOME/src/internal-talks/computer-forensics-danny-2015-2-5/' " '$HOME/reveal.js/' will be used if not specified.
-let g:reveal_default_config = {'fname' : 'reveal'}
-
 au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 packloadall
