@@ -1,10 +1,22 @@
 "-- Pathogen 
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 filetype plugin indent on
 set nocompatible
 set t_Co=256
+set nofixendofline
 
+"-- Set Gist keymap
+map gs :Gist -p<CR>
+
+"-- Powerline beta!
+set noshowmode
+set encoding=utf-8
+set rtp+=/usr/local/lib/python2.7/site-packages/powerline/bindings/vim
+set fillchars+=stl:\ ,stlnc:\
+
+"-- NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 "-- Sane timeout values
 set notimeout
@@ -12,12 +24,11 @@ set ttimeout
 set ttimeoutlen=10
 
 
-"-- Tabs are 2 spaces, btw
+"-- Tabs are 4 spaces, btw
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set autoindent
 set wrap
 set textwidth=80
 set formatoptions=qrn1
@@ -32,19 +43,19 @@ set noswapfile
 au FocusLost * :wa
 
 "-- Colors and things
-syntax on
+syntax enable
 set background=dark
 colorscheme solarized
 set showmatch
 set backspace=2
 set encoding=utf-8
 set scrolloff=3
-set showmode
 set showcmd
 set cursorline
 set ttyfast
 set ruler
 set laststatus=2
+set number
 
 
 "-- Nav keys, goooo
@@ -93,3 +104,13 @@ endfunction
 call EnsureDirExists($HOME . '/tmp/swap')
 call EnsureDirExists($HOME . '/tmp/undo')
 call EnsureDirExists($HOME . '/tmp/backup')
+
+let g:reveal_root_path = '$HOME/src/internal-talks/computer-forensics-danny-2015-2-5/' " '$HOME/reveal.js/' will be used if not specified.
+let g:reveal_default_config = {'fname' : 'reveal'}
+
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
